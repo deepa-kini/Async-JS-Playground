@@ -1,10 +1,14 @@
 console.log('before');
-getUser(1, user => {
+getUser(1, displayUserDetails);
+
+function displayUserDetails(user) {
   console.log('User', user);
-  getRepositories(user.name, (repos) => {
-    console.log('repos', repos);
-  });
-});
+  getRepositories(user.name, displayRepositories);
+}
+
+function displayRepositories(repos) {
+  console.log('repos', repos);
+}
 console.log('after');
 
 
